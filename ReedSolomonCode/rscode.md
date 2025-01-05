@@ -1,5 +1,7 @@
 # RScode
 
+Before the advent of ZK, RS codes were already widely used in the domain of **Channel Coding and Decoding**.
+
 To transfer a message, the raw message undergoes a series of coding and decoding stages. The process can be organized as follows:
 
 Encoding Side (Sender):
@@ -22,35 +24,33 @@ Decoding Side (Reciver):
 
 This structured process ensures the message is accurately transmitted through the channel while maintaining security and reliability.
 
-Before the advent of ZK, RS codes were already widely used in the domain of channel coding and decoding.
-
-## some basic concenpt
+## some basic concept
 
 ### RS-code is a block code.
 
 For example, given a message of length $x$ to be encoded, the encoding process is performed step by step, processing the message in blocks of size $k$ at each step.
 
-In other words, the raw message is divided into multiple blocks, each containing $k$ elements of information. Each block is referred to as a message word.
+In other words, the raw message is divided into multiple blocks, each containing $k$ elements of information. Each block is referred to as a message .
 
-Each message word of size $k$ is mapped to a code word consisting of $n$ elements in $F_q$:
+Each message  of size $k$ is mapped to a code word consisting of $n$ elements in $F_q$:
 
 $$
 F_{q}^{k} \rightarrow F_{q}^{n}
 $$
 
-$k$: The message word length,
+$k$: The message  length,
 
-$F_{q}^{k}$ The set of all possible message words of length  k .
+$F_{q}^{k}$ The set of all possible messages of length  k .
 
 $n$: The code word length
 
-Code Space: A q-array code C is a subset of $F_{q}^{n}$ . Since $F_{q}^{n}$ contains many more elements than $F_{q}^{k}$ ($F_{q}^{n} \gg F_{q}^{k}$ ), not all elements of $F_{q}^{k}$ are used as codewords.
+Code Space: A q-array code C is a subset of $F_{q}^{n}$ . Since $F_{q}^{n}$ contains many more elements than $F_{q}^{k}$ ($F_{q}^{n} \gg F_{q}^{k}$ ), not all elements of $F_{q}^{n}$ are used as codewords.
 
 code word: The element in code space
 
 We also need to mention another two terms:
 
-1. Code Rate: $r := k/n$ The ratio of message word length to code word length.
+1. Code Rate: $r := k/n$ The ratio of message  length to code word length.
 
 2. Distance: $d := n - k + 1$ Minimum distance (measured as the number of symbol positions in which two codewords differ, we will explain it later).
 
@@ -61,11 +61,11 @@ Please keep the above information in mind, as different papers and textbooks may
 First, let's recap the Reed-Solomon (RS) coding's process step by step:
 1.	Message Representation:
 
-    The message is divided into blocks of size $k$, where each block is treated as a sequence of symbols from a finite field $F_q$. Each block is called a message word.
+    The message is divided into blocks of size $k$, where each block is treated as a sequence of symbols from a finite field $F_q$. Each block is called a message .
 
 2.	Polynomial Representation:
 
-    Each message word is converted into a polynomial $P(x)$ of degree less than $k$. The coefficients of the polynomial come from the finite field $F_q$.
+    Each message  is converted into a polynomial $P(x)$ of degree less than $k$. The coefficients of the polynomial come from the finite field $F_q$.
 
 3.	Evaluation:
 
@@ -75,18 +75,18 @@ First, let's recap the Reed-Solomon (RS) coding's process step by step:
 
 4.	Codeword Construction:
 
-    The resulting sequence of $n$ symbols is called a codeword. Each codeword is a representation of the original message word, with additional redundancy added.
+    The resulting sequence of $n$ symbols is called a codeword. Each codeword is a representation of the original message , with additional redundancy added.
 
 5.	Error Correction: 
 
-    *You dont need to fully understand when you just start your zk journey, this property is not untilzed in zk for now(2024, Dec, 31th)*
+    *You don't need to fully understand when you just start your zk journey, this property is not untilzed in zk for now(2024, Dec, 31th)*
 
-    In the decoding process, the receiver uses the properties of polynomials to correct errors. If fewer than $(n-k)/2$ symbols are corrupted, the original message word can be fully recovered.
+    In the decoding process, the receiver uses the properties of polynomials to correct errors. If fewer than $(n-k)/2$ symbols are corrupted, the original message  can be fully recovered.
 #### Why do we call it linear code?
 
 The RS encoding process can be expressed as a matrix multiplication.
 
-- For a message word $m = (m_0, m_1, \dots, m_{k-1})$ in $F_q^k$, the codeword $c = (c_0, c_1, \dots, c_{n-1})$ in $F_q^n$ is obtained by multiplying $m$ with a generator matrix $G$.
+- For a message  $m = (m_0, m_1, \dots, m_{k-1})$ in $F_q^k$, the codeword $c = (c_0, c_1, \dots, c_{n-1})$ in $F_q^n$ is obtained by multiplying $m$ with a generator matrix $G$.
 
 $$
 c = m \cdot G
@@ -101,16 +101,18 @@ Matrix multiplication is a linear operation, (we also have [convolution code](ht
 
 This matrix is a Vandermonde matrix over $F_P$ ([read more](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction#Constructions_(encoding):~:text=%5D-,This%20matrix%20is%20a%20Vandermonde%20matrix%20over,.,-Systematic%20encoding%20procedure)).
 
+If the code $F$ is a linear function. That is, $F(a \cdot m_0 + b \cdot m_1) = a \cdot F(m_0) + b \cdot F(m_1)$ for any messages $m_0, m_1 \in F_{q}^{k}$ and scalars $a, b \in F_{q}$.
+
 ## What is an MDS Code?
 
-An MDS Code (Maximum Distance Separable Code) is a type of error-correcting code that achieves the maximum possible minimum distance $d_{\text{min}}$ for a given codeword length $n$ and message word length $k$.
+An MDS Code (Maximum Distance Separable Code) is a type of error-correcting code that achieves the maximum possible minimum distance $d_{\text{min}}$ for a given codeword length $n$ and message  length $k$.
 
 Key Properties of MDS Codes
 
 1.	Maximum Minimum Distance: $d_{\text{min}} = n - k + 1$
 
     - $n$: The length of the codeword (number of symbols in the encoded block).
-    - $k$: The length of the message word (number of information symbols in the block).
+    - $k$: The length of the message  (number of information symbols in the block).
     - $d_{\text{min}}$: The minimum Hamming distance between any two codewords.
 
 2.	Optimal Error-Correction:
