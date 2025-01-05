@@ -53,7 +53,7 @@ In this case the two-adicity of $F_{13}$ is 2
 
 Two-adicity is really helpful in FRI because it allows us to efficiently reduce the size of the domain where we evaluate the polynomial. During each step of the FRI protocol, we compute the polynomial on a new domain that is half the size of the previous one. This process relies on having subgroups in the field whose sizes are powers of 2, thanks to its two-adicity.
 
-The beauty of this is that two-adicity guarantees we have enough smaller subgroups (like  2^n, 2^{n-1}, \dots ) to keep halving the domain until it’s small enough to verify easily. This step-by-step reduction is a key part of FRI’s design and makes it efficient to create and verify proofs.
+The beauty of this is that two-adicity guarantees we have enough smaller subgroups (like  $2^n, 2^{n-1}, \dots$ ) to keep halving the domain until it’s small enough to verify easily. This step-by-step reduction is a key part of FRI’s design and makes it efficient to create and verify proofs.
 
 ## Montgomery Form
 
