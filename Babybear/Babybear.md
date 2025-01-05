@@ -57,7 +57,7 @@ The beauty of this is that two-adicity guarantees we have enough smaller subgrou
 
 ## Montgomery Form
 
-Modular reduction is computationally expensive. [Montgomery multiplication]((https://en.wikipedia.org/wiki/Montgomery_modular_multiplication)) provides an efficient solution for performing modular arithmetic operations.
+Modular reduction is computationally expensive. [Montgomery multiplication](https://en.wikipedia.org/wiki/Montgomery_modular_multiplication) provides an efficient solution for performing modular arithmetic operations.
 
 ### Key Insight
 While humans find division by powers of 10 (1, 10, 100, ..., 10^n) natural, computers perform more efficiently with powers of 2. Montgomery arithmetic leverages this by transforming calculations into a domain where divisions become simple bit shifts.
@@ -66,7 +66,7 @@ While humans find division by powers of 10 (1, 10, 100, ..., 10^n) natural, comp
 The Montgomery multiplication (Mon) of two numbers A and B is defined as:
 
 $$
-\text{Mon}(A, B, \text{N}) = \text{Mon}(A, B) = 
+\text{Mon}(A, B, \text{N}) = \text{Mon}(A, B) =
 \begin{cases}
 \frac{A \cdot B + (A \cdot B \cdot \text{N'} \bmod R) \cdot \text{N}}{R} - \text{N} & \text{if Result} \geq \text{N} \\
 \frac{A \cdot B + (A \cdot B \cdot \text{N'} \bmod R) \cdot \text{N}}{R} & \text{otherwise}
