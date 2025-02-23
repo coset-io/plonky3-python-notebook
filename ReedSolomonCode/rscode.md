@@ -24,7 +24,7 @@ Decoding Side (Reciver):
 
 This structured process ensures the message is accurately transmitted through the channel while maintaining security and reliability.
 
-## some basic concept
+## Basic concept
 
 ### RS-code is a block code.
 
@@ -128,9 +128,3 @@ Key Properties of MDS Codes
     Even if up to n - k symbols are lost, the original message can still be fully reconstructed.
 
 As the distance of RScode is also $d_{\text{min}} \leq n - k + 1$, which is a kind of MDS
-
-## TODO
-
-- [ ] Why plonky3 use coset in RS-code
-
-- [ ] RS-code errcorection edu level code if necessy
