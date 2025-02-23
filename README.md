@@ -22,6 +22,8 @@ The Plonky3 Python Notebook aims to:
 
 ## Getting Started
 
+### Run on Local
+
 To begin exploring the Plonky3 Python Notebook:
 
 1. **Clone the Repository**:
@@ -54,6 +56,10 @@ To begin exploring the Plonky3 Python Notebook:
 
    In the Jupyter interface, open the `plonky3_notebook.ipynb` file to start learning.
 
+### Run on Google Colab
+
+Or you can run the notebook on [Google Colab](https://colab.research.google.com/).
+
 ## Prerequisites
 
 A basic understanding of Python programming and familiarity with cryptographic concepts will be beneficial for users of this notebook.
@@ -68,6 +74,6 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## Acknowledgments
 
-This project is supported by [zkBankai’s grant program](https://soulforge.zkbankai.com/).
+This project is supported by [zkBankai's grant program](https://soulforge.zkbankai.com/).
 
 For more information on Plonky3 and its applications, refer to the [official Polygon Plonky3 repository](https://github.com/Plonky3/Plonky3).
