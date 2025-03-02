@@ -77,3 +77,9 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 This project is supported by [zkBankai's grant program](https://soulforge.zkbankai.com/).
 
 For more information on Plonky3 and its applications, refer to the [official Polygon Plonky3 repository](https://github.com/Plonky3/Plonky3).
+
+
+## Feedback
+If you have any questions or concerns about this content, please fill out the form below to contact us.  [google form](https://forms.gle/3LGv4YfAdopmT53m9)
+
+
